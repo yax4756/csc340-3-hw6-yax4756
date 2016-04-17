@@ -23,11 +23,11 @@ protected:
 };
 template<class T>
     float Circle<T>::area() const{
-        return (float) (Circle::getRadius() * Circle::getRadius() * M_PI);
+        return (float) (Circle::getRadius() * Circle::getRadius() * 3.14);
     }
 template <class T>
     float Circle<T>::circumference() const {
-    return (float)(2*Circle::getRadius()*M_PI);
+    return (float)(2*Circle::getRadius()*3.14);
 }
 template <class T>
     void Circle<T>::setRadius(T r){
