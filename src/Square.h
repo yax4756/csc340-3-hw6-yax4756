@@ -14,16 +14,16 @@ public:
         this->x=0;
         this->y=0;
         this->side=0;
-        Rectangle<T>::w=side;
-        Rectangle<T>::h=Rectangle<T>::w;
+        this->w=side;
+        this->h=this->w;
         if(Rectangle<T>::w<0|Rectangle<T>::h<0)throw CustomException(33);
     }
     Square(T x,T y, T side){
-        x=x;
-        y=y;
-        side=side;
-        Rectangle<T>::h=side;
-        Rectangle<T>::w=Rectangle<T>::h;
-        if(Rectangle<T>::w<0|Rectangle<T>::h<0)throw CustomException(33);
+        this->x=x;
+        this->y=y;
+        this->side=side;
+        this->w=side;
+        this->h=this->w;
+        if(this->w<0|this->h<0)throw CustomException(33);
     }
 };

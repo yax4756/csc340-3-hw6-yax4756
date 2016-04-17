@@ -9,10 +9,17 @@
 template<class T>
 class Circle : public Point2D<T>{
 protected:
-        T r;
+        T r=0;
     public:
-        Circle(){ Point2D<T>::x=0;Point2D<T>::y=0;r=0;if(r<0)throw CustomException(22);}
-        Circle(T x, T y, T r){Point2D<T>::x=x;Point2D<T>::y=y;r=r;}
+        //Circle(){ Point2D<T>::x=0;Point2D<T>::y=0;r=0;if(r<0)throw CustomException(22);}
+        //Circle(T x, T y, T r){Point2D<T>::x=x;Point2D<T>::y=y;r=(T)r;if(r<0)throw CustomException(22);}
+        Circle(){r=0;}
+    Circle(T x, T y, T r)
+            {this->r=r;
+                this->x=x;
+                this->y=y;
+                if(r<0)throw CustomException(22);
+            }
 
         float getRadius()const;
         void setRadius(T r);
@@ -23,7 +30,8 @@ protected:
 };
 template<class T>
     float Circle<T>::area() const{
-        return (float) (Circle::getRadius() * Circle::getRadius() * 3.14);
+        float area=(float) (Circle::getRadius() * Circle::getRadius() * 3.14);
+        return  (Circle::getRadius() * Circle::getRadius() * 3.14);
     }
 template <class T>
     float Circle<T>::circumference() const {
