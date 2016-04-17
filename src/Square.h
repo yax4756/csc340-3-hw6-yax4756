@@ -16,6 +16,7 @@ public:
         this->side=0;
         Rectangle<T>::w=side;
         Rectangle<T>::h=Rectangle<T>::w;
+        if(w<0|h<0)throw CustomException(33);
     }
     Square(T x,T y, T side){
         x=x;
@@ -23,5 +24,6 @@ public:
         side=side;
         Rectangle<T>::h=side;
         Rectangle<T>::w=Rectangle<T>::h;
+        if(w<0|h<0)throw CustomException(33);
     }
 };

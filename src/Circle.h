@@ -11,7 +11,7 @@ class Circle : public Point2D<T>{
 protected:
         T r;
     public:
-        Circle(){ Point2D<T>::x=0;Point2D<T>::y=0;r=0;}
+        Circle(){ Point2D<T>::x=0;Point2D<T>::y=0;r=0;if(r<0)throw CustomException(22);}
         Circle(T x, T y, T r){Point2D<T>::x=x;Point2D<T>::y=y;r=r;}
 
         float getRadius()const;
@@ -32,6 +32,7 @@ template <class T>
 template <class T>
     void Circle<T>::setRadius(T r){
     Circle::r=r;
+    if(r<0)throw CustomException(22);
 }
 template <class T>
 float Circle<T>::getRadius() const {
